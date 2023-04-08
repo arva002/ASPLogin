@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace ASPLogin
 {
-    public partial class Registration : System.Web.UI.Page
+    public partial class Reg : System.Web.UI.Page
     {
         SqlConnection SQLconn = new SqlConnection("Data Source=20220432-Arun; Initial Catalog=ASPLogin; Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
