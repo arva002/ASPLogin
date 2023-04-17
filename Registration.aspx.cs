@@ -19,7 +19,7 @@ namespace ASPLogin
             SQLAdapter.Fill(Registration);
                 
         }
-//It will redirected to the main page upon successfull registration//
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("WebForm1.aspx");
