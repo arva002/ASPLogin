@@ -16,11 +16,10 @@ namespace ASPLogin
         protected void Page_Load(object sender, EventArgs e)
         {
             messagelbl.Text = "";
-            SqlDataAdapter SQLAdapter = new SqlDataAdapter("SELECT * FROM UserAccount WHERE UserName='" + txtUsername.Text + "' AND Password='" + txtPassword.Text + "'", SQLconn);
+            SqlDataAdapter SQLAdapter = new SqlDataAdapter("SELECT * FROM NewRegistration WHERE UserName='" + txtFirstName.Text + "' AND Password='" + txtPassword.Text + "'", SQLconn);
             DataTable DT = new DataTable();
-            SQLAdapter.Fill(DT);
 
-            if (DT.Rows.Count > 0)
+                       if (DT.Rows.Count > 0)
             {
                 messagelbl.Visible = true;
                 messagelbl.Text = "You have successfully Logged into the System";
@@ -32,6 +31,16 @@ namespace ASPLogin
                 messagelbl.Text = "Invalid Username or Password";
                 messagelbl.ForeColor = System.Drawing.Color.Red;
 
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Redirectform.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("NewRegistration.aspx");
         }
     }
 }
